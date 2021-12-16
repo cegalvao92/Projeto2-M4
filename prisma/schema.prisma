@@ -18,27 +18,28 @@ model Usuario {
   nascimento  String
   criado_em   DateTime    @default(now()) @map("created_at")
   modificado_em   DateTime    @default(now()) @map("modified_at")
-  seguidor    Seguidores @relation(fields: [seguidorid], references: [id])
-  seguidorid  Int
-  seguindo    Seguindo @relation(fields: [seguindoid], references: [id])
-  seguindoid  Int
-  tweet       Tweet @relation(fields: [tweetid], references: [id])
-  tweetid     Int
+  seguidores  Seguidores[]
+  seguindo    Seguindo[]
+  tweet       Tweet[]
 }
 
 model Seguidores {
   id          Int     @default(autoincrement()) @id
-  idSeguidor  Int     @default(autoincrement()) @id
+  Usuario     Usuario?  @relation(fields:[usuarioid], references:[id]) 
+  usuarioid  Int     
   
 }
 
 model Seguindo {
   id          Int     @default(autoincrement()) @id
-  idSeguindo  Int     @default(autoincrement()) @id
+  Usuario     Usuario?  @relation(fields:[seguindoid], references:[id])
+  seguindoid  Int     
 }
 
 model Tweet {
   id          Int     @default(autoincrement()) @id
+  Usuario     Usuario?  @relation(fields:[tweetid], references:[id])
+  tweetid     Int
   texto       String  
   emoji       String
   data_postagem   DateTime    @default(now()) @map("created_at")
