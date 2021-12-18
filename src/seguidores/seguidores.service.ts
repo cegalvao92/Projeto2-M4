@@ -1,11 +1,15 @@
+import { CreateSeguidoresDto } from './dto/create-seguidores.dto';
+import { UpdateSeguidoresDto } from './dto/update-seguidores.dto';
 import { Injectable } from '@nestjs/common';
-import { CreateSeguidoreDto } from './dto/create-seguidore.dto';
-import { UpdateSeguidoreDto } from './dto/update-seguidore.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { Seguidores } from '@prisma/client';
 
 @Injectable()
 export class SeguidoresService {
-  create(createSeguidoreDto: CreateSeguidoreDto) {
-    return 'This action adds a new seguidore';
+  constructor(private prisma: PrismaService) {}
+
+  async create(data: CreateSeguidoresDto): Promise<Seguidores> {
+    return await this.prisma.seguidores.create({ data });
   }
 
   findAll() {
@@ -13,14 +17,14 @@ export class SeguidoresService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} seguidore`;
+    return `This action returns a #${id} seguidor`;
   }
 
-  update(id: number, updateSeguidoreDto: UpdateSeguidoreDto) {
-    return `This action updates a #${id} seguidore`;
+  update(id: number, updateSeguidoresDto: UpdateSeguidoresDto) {
+    return `This action updates a #${id} seguidor`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} seguidore`;
+    return `This action removes a #${id} seguidor`;
   }
 }

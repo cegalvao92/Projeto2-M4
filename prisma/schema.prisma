@@ -16,6 +16,7 @@ model Usuario {
   imagem      String
   bio         String
   nascimento  String
+  senha       String
   criado_em   DateTime    @default(now()) @map("created_at")
   modificado_em   DateTime    @default(now()) @map("modified_at")
   seguidores  Seguidores[]

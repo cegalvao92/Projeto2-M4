@@ -21,6 +21,10 @@ export class CreateUsuarioDto {
     nascimento: string;
 
     @IsNotEmpty()
+    @IsString()
+    senha: string;
+
+    @IsNotEmpty()
     @IsDate()
     criado_em: Date;
 
