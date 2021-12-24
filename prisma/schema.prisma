@@ -26,21 +26,23 @@ model Usuario {
 
 model Seguidores {
   id          Int     @default(autoincrement()) @id
-  Usuario     Usuario?  @relation(fields:[usuarioid], references:[id]) 
-  usuarioid  Int     
+  usuarios     Usuario[]   
+  usuarioid   Int
+  idseguidor  Int     
   
 }
 
 model Seguindo {
   id          Int     @default(autoincrement()) @id
-  Usuario     Usuario?  @relation(fields:[seguindoid], references:[id])
-  seguindoid  Int     
+  usuarios     Usuario[]
+  usuarioid   Int
+  idseguindo  Int     
 }
 
 model Tweet {
   id          Int     @default(autoincrement()) @id
-  Usuario     Usuario?  @relation(fields:[tweetid], references:[id])
-  tweetid     Int
+  usuarios     Usuario[]
+  usuarioid     Int
   texto       String  
   emoji       String
   data_postagem   DateTime    @default(now()) @map("created_at")

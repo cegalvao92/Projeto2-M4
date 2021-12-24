@@ -32,13 +32,6 @@ export class CreateUsuarioDto {
     @IsDate()
     modificado_em: Date;
 
-    @IsNumber()
-    seguidoresid: Number;
-
-    @IsNumber()
-    seguindoid: Number;
-
-    @IsNumber()
-    tweetid: number;
+    
 
 }
