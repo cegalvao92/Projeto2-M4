@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { SeguidoresService } from './seguidores.service';
 import { CreateSeguidoresDto } from './dto/create-seguidores.dto';
@@ -8,27 +9,36 @@ export class SeguidoresController {
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
   @Post()
+<<<<<<< HEAD
   create(@Body() createSeguidoresDto: CreateSeguidoresDto) {
     return this.seguidoresService.create(createSeguidoresDto);
+=======
+  create(@Body() createSeguidoreDto: CreateSeguidoresDto) {
+    return this.seguidoresService.createPrisma(createSeguidoreDto);
+>>>>>>> b777047bcec13cb449e13560006d3113f86dc692
   }
 
   @Get()
   findAll() {
-    return this.seguidoresService.findAll();
+    return this.seguidoresService.findAllPrisma();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.seguidoresService.findOne(+id);
+    return this.seguidoresService.findOnePrisma(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSeguidoresDto: UpdateSeguidoresDto) {
+<<<<<<< HEAD
     return this.seguidoresService.update(+id, updateSeguidoresDto);
+=======
+    return this.seguidoresService.updatePrisma(+id, updateSeguidoresDto);
+>>>>>>> b777047bcec13cb449e13560006d3113f86dc692
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.seguidoresService.remove(+id);
+    return this.seguidoresService.removePrisma(+id);
   }
 }
