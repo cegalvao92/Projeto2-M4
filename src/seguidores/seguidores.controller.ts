@@ -9,13 +9,8 @@ export class SeguidoresController {
   constructor(private readonly seguidoresService: SeguidoresService) {}
 
   @Post()
-<<<<<<< HEAD
   create(@Body() createSeguidoresDto: CreateSeguidoresDto) {
-    return this.seguidoresService.create(createSeguidoresDto);
-=======
-  create(@Body() createSeguidoreDto: CreateSeguidoresDto) {
-    return this.seguidoresService.createPrisma(createSeguidoreDto);
->>>>>>> b777047bcec13cb449e13560006d3113f86dc692
+    return this.seguidoresService.createPrisma(createSeguidoresDto);
   }
 
   @Get()
@@ -30,11 +25,8 @@ export class SeguidoresController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSeguidoresDto: UpdateSeguidoresDto) {
-<<<<<<< HEAD
-    return this.seguidoresService.update(+id, updateSeguidoresDto);
-=======
     return this.seguidoresService.updatePrisma(+id, updateSeguidoresDto);
->>>>>>> b777047bcec13cb449e13560006d3113f86dc692
+
   }
 
   @Delete(':id')

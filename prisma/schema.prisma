@@ -29,8 +29,7 @@ model Seguidores {
   usuarios    Usuario[]   
   usuarioid   Int
   idseguidor  Int     
-  Usuario     Usuario?  @relation(fields:[seguidoresid], references:[id]) 
-  seguidoresid   Int     
+      
  
 }
 
