@@ -1,7 +1,6 @@
 import { IsDate, IsInt, IsNotEmpty, IsString, Max } from "class-validator";
 
 export class CreateTweetDto {
-id: number;
 
 @IsNotEmpty()
 @IsString()
@@ -27,5 +26,9 @@ usuarioid: number;
 @IsNotEmpty()
 @IsInt()
 tweetid: number;
+
+@IsNotEmpty()
+@IsString()
+conteudo: string;
 
 }

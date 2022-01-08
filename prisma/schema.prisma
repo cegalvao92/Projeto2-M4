@@ -22,7 +22,7 @@ model Usuario {
   seguidores  Seguidores[]
   seguindo    Seguindo[]
   tweet       Tweet[]
-  favorito   FavoritosonUsuario[]
+  favorito    FavoritosonUsuario[]
 }
 
 model Seguidores {
@@ -34,7 +34,7 @@ model Seguidores {
 
 model Seguindo {
   id          Int     @default(autoincrement()) @id
-  usuarios     Usuario[]
+  usuarios    Usuario[]
   usuarioid   Int
   idseguindo  Int     
 }
