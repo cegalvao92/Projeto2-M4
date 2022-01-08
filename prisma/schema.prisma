@@ -22,15 +22,14 @@ model Usuario {
   seguidores  Seguidores[]
   seguindo    Seguindo[]
   tweet       Tweet[]
+  favorito   FavoritosonUsuario[]
 }
 
 model Seguidores {
   id          Int     @default(autoincrement()) @id
   usuarios    Usuario[]   
   usuarioid   Int
-  idseguidor  Int     
-      
- 
+  idseguidor  Int  
 }
 
 model Seguindo {
@@ -47,6 +46,34 @@ model Tweet {
   texto       String  
   emoji       String
   data_postagem   DateTime    @default(now()) @map("created_at")
-  curtidas    Int   
+  curtidas    Int
+  categoria   CategoriaonTweets[]
+  conteudo    String
+  usuario     FavoritosonUsuario[] 
 }
 
+model Categoria {
+  id          Int     @default(autoincrement()) @id
+  nome        String
+  criado_em   DateTime    @default(now()) @map("created_at")
+  tweet       CategoriaonTweets[]  
+}
+
+model CategoriaonTweets{
+  tweet       Tweet @relation(fields: [tweetId], references: [id])
+  tweetId     Int
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+  categoriaId     Int
+  criado_em   DateTime    @default(now()) @map("created_at")
+
+  @@id([tweetId, categoriaId])   
+}
+
+model FavoritosonUsuario{
+  tweet       Tweet @relation(fields: [tweetId], references: [id])
+  tweetId     Int
+  usuario     Usuario @relation(fields: [usuarioId], references: [id])
+  usuarioId   Int
+
+  @@id([tweetId, usuarioId])
+}
