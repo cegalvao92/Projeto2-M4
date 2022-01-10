@@ -6,11 +6,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('Fábrica de Sinapse')
+    .setTitle('Projeto Rede Social')
     .setDescription(
-      'O Swagger (aka OpenApi) é uma biblioteca muito conhecida no universo backend, estando disponível para diversas linguagens e frameworks. Ela gera um site interno no seu backend que descreve, com muitos detalhes, cada endpoint e estrutura de entidades presentes na sua aplicação.',
+      'O projeto consiste em criar uma API que servirá para controle do Twitter, onde o usuario postará tweets e terá seguidores',
     )
-    .setVersion('1.0')
     .addTag('users')
     .build();
 

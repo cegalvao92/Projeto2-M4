@@ -1,3 +1,4 @@
+import { ApiProperty } from "@nestjs/swagger";
 import { IsDate, IsNotEmpty, IsString } from "class-validator";
 
 export class CreateCategoriaDto {
@@ -6,6 +7,10 @@ export class CreateCategoriaDto {
 
     @IsNotEmpty()
     @IsString()
+    @ApiProperty({
+        example: 'Tecnologia',
+        description: `Nome do tipo de categoria para os tweets`,
+    })
     nome: string;
 
     @IsNotEmpty()
