@@ -161,7 +161,8 @@ Todos os campos são obrigatórios:
   "texto": "String", 
   "emoji": "String",
   "data_postagem": "DateTime",
-  "curtidas": "Int"
+  "curtidas": "Int",
+  "conteudo": "String"
 }
 
 ```
@@ -184,6 +185,31 @@ Todos os campos são obrigatórios:
 [DELETE] Exclusão de item por ID
 http://localhost:3000/tweet/id
 
+## **** Endpoints - Categoria ****
+
+[GET] Leitura de todos os itens
+http://localhost:3000/categoria/
+
+[GET] Leitura de itens individuais (por ID)
+http://localhost:3000/categoria/id
+
+[POST] Cadastro
+http://localhost:3000/categoria/
+
+[PATCH] Edição de item por ID
+http://localhost:3000/categoria/id
+
+Todos os campos são obrigatórios:
+```
+
+{
+  "nome": "String", 
+  "criado_em": "String"
+}
+
+```
+[DELETE] Exclusão de item por ID
+http://localhost:3000/categoria/id
 
 ### Projeto configurado e conectado ao Postgresql.
 
