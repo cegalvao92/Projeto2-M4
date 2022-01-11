@@ -1,6 +1,6 @@
 # Projeto Rede Social [Postgres+ NestJS + TypeScript + Prisma + JWT]
 
-## Rotas: Usuários, Seguidores, Seguindo e Tweet
+## Rotas: Usuários, Seguidores, Seguindo, Tweet e Categoria
 
 ##### Integração Backend + Postgresql + Prisma.
 
