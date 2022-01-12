@@ -1,4 +1,5 @@
 # Projeto Rede Social [Postgres+ NestJS + TypeScript + Prisma + JWT]
+#Link do Swagger: http://localhost:3000/api/#/
 
 ## Rotas: Usuários, Seguidores, Seguindo, Tweet e Categoria
 
